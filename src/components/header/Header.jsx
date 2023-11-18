@@ -46,7 +46,7 @@ export const Header = () => {
 		<div className="h-auto fixed z-50 block">
 			<div className="bg-slate-900 w-screen px-6 flex justify-between align-bottom">
 				<div className="text-2xl py-4 text-gray-300 font-mono">
-					<a href="./">~/mayankpruthi</a>
+					<Link to="/">~/mayankpruthii</Link>
 				</div>
 				{screenSize.width > 600 ? (
 					<div className="list-none self-center">
