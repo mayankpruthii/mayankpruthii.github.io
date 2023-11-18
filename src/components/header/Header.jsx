@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function getCurrentDimension() {
 	return {
@@ -19,15 +20,15 @@ export const Header = () => {
 	const headerNavigationItems = [
 		{
 			navigationItem: "Blogs",
-			navigationLink: "./",
+			navigationLink: "/blogs",
 		},
 		{
 			navigationItem: "Portfolio",
-			navigationLink: "./",
+			navigationLink: "/portfolio",
 		},
 		{
 			navigationItem: "Contact Me",
-			navigationLink: "./",
+			navigationLink: "/contact-me",
 		},
 	];
 
@@ -51,9 +52,11 @@ export const Header = () => {
 					<div className="list-none self-center">
 						<ul className="flex">
 							{headerNavigationItems.map((item) => (
-								<div className="py-4 px-4 bg-grey text-gray-300 hover:bg-slate-800 hover:cursor-pointer hover:text-white">
-									{item.navigationItem}
-								</div>
+								<Link to={item.navigationLink}>
+									<div className="py-4 px-4 bg-grey text-gray-300 hover:bg-slate-800 hover:cursor-pointer hover:text-white">
+										{item.navigationItem}
+									</div>
+								</Link>
 							))}
 						</ul>
 					</div>
