@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { isWideWidthScreen } from "../../utils";
 
-function getCurrentDimension() {
-	return {
-		width: window.innerWidth,
-		height: window.innerHeight,
-	};
-}
+export const Header = (props) => {
+	const { screenSize } = props;
 
-export const Header = () => {
-	const [screenSize, setScreenSize] = useState(getCurrentDimension());
 	const [showNarrowWidthScreenMenu, setShowNarrowWidthScreenMenu] =
 		useState(false);
 
@@ -32,23 +27,13 @@ export const Header = () => {
 		},
 	];
 
-	useEffect(() => {
-		const updateDimension = () => {
-			setScreenSize(getCurrentDimension());
-		};
-		window.addEventListener("resize", updateDimension);
-		return () => {
-			window.removeEventListener("resize", updateDimension);
-		};
-	}, [screenSize]);
-
 	return (
 		<div className="h-auto fixed z-50 block">
 			<div className="bg-slate-900 w-screen px-6 flex justify-between align-bottom">
 				<div className="text-2xl py-4 text-gray-300 font-mono">
-					<Link to="/">~/mayankpruthii</Link>
+					<Link to="/">~/mayankpruthi</Link>
 				</div>
-				{screenSize.width > 600 ? (
+				{isWideWidthScreen(screenSize) ? (
 					<div className="list-none self-center">
 						<ul className="flex">
 							{headerNavigationItems.map((item) => (
