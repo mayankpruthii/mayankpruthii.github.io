@@ -75,7 +75,12 @@ export const Header = (props) => {
 				{showNarrowWidthScreenMenu
 					? headerNavigationItems.map((item) => (
 							<div className="justify-center align-center text-center text-gray-300 py-3 hover:text-white hover:cursor-pointer text-2xl">
-								{item.navigationItem}
+								<Link
+									to={item.navigationLink}
+									onClick={() => setShowNarrowWidthScreenMenu(false)}
+								>
+									{item.navigationItem}
+								</Link>
 							</div>
 					  ))
 					: null}
