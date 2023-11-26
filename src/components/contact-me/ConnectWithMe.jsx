@@ -20,9 +20,10 @@ export const ConnectWithMe = () => {
 		<>
 			<div className="mt-10 mb-6 text-xl text-center">Connect with me</div>
 			<div className="flex justify-evenly flex-wrap mx-auto max-w-4xl">
-				{contactItemsList.map((contactItem) => {
+				{contactItemsList.map((contactItem, index) => {
 					return (
 						<div
+                            key={index}
 							onClick={() => window.open(contactItem.redirectionUrl, "_blank")}
 							className="mt-2 flex align-middle cursor-pointer"
 						>

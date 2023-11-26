@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { isWideWidthScreen, scrollToTop } from "../../utils";
 import { CustomButton } from "../CustomButton";
 
@@ -7,9 +7,9 @@ export const Portfolio = (props) => {
 
 	const RESUME_URL = "/Mayank_Pruthi_Resume_29_5_2022.pdf";
 
-	useLayoutEffect(() => {
-		scrollToTop();
-	});
+	useEffect(() => {
+        scrollToTop();
+	}, []);
 
 	return (
 		<div className="max-w-3xl mx-auto my-6">
@@ -271,13 +271,11 @@ export const Portfolio = (props) => {
 							</a>{" "}
 							and video tutorial of the project -
 							<iframe
-								width="560"
-								height="315"
+								width="100%"
+								height="340"
 								src="https://www.youtube.com/embed/fouH-Bv6iWs?si=LINkhEWwiOab1bjJ"
 								title="YouTube video player"
-								frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
 								className="my-4 mx-auto"
 							></iframe>
 						</li>
