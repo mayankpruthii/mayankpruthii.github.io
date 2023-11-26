@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { CustomButton } from "../CustomButton";
 
 export const NotFound = () => {
 	const glassOfWaterImageUrl = "./water-glass.png";
@@ -14,11 +15,9 @@ export const NotFound = () => {
 					Anyway, here is a reminder for you to drink a glass of water
 				</p>
 				<br />
-				<Link to="/">
-					<p className="font-bold cursor-pointer text-gray-700 text-center">
-						::: Go to Home Page :::
-					</p>
-				</Link>
+				<div className="text-center mt-6 mx-auto">
+					<CustomButton text="Go To Home Page" redirectionUrl="/" />
+				</div>
 			</div>
 		</div>
 	);

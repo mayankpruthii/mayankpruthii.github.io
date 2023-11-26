@@ -31,13 +31,13 @@ export const Header = (props) => {
 		<div className="h-auto fixed z-50 block">
 			<div className="bg-slate-900 w-screen px-6 flex justify-between align-bottom">
 				<div className="text-2xl py-4 text-gray-300 font-mono">
-					<Link to="/">~/mayankpruthi</Link>
+					<Link onClick={() => !isWideWidthScreen(screenSize) ? setShowNarrowWidthScreenMenu(false) : null} to="/">~/mayankpruthi</Link>
 				</div>
 				{isWideWidthScreen(screenSize) ? (
 					<div className="list-none self-center">
 						<ul className="flex">
-							{headerNavigationItems.map((item) => (
-								<Link to={item.navigationLink}>
+							{headerNavigationItems.map((item, index) => (
+								<Link key={index} to={item.navigationLink}>
 									<div className="py-4 px-4 bg-grey text-gray-300 hover:bg-slate-800 hover:cursor-pointer hover:text-white">
 										{item.navigationItem}
 									</div>
@@ -73,8 +73,8 @@ export const Header = (props) => {
 				}`}
 			>
 				{showNarrowWidthScreenMenu
-					? headerNavigationItems.map((item) => (
-							<div className="justify-center align-center text-center text-gray-300 py-3 hover:text-white hover:cursor-pointer text-2xl">
+					? headerNavigationItems.map((item, index) => (
+							<div key={index} className="justify-center align-center text-center text-gray-300 py-3 hover:text-white hover:cursor-pointer text-2xl">
 								<Link
 									to={item.navigationLink}
 									onClick={() => setShowNarrowWidthScreenMenu(false)}

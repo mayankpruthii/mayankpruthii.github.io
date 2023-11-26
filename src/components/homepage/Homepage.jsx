@@ -1,26 +1,14 @@
-import { isWideWidthScreen } from "../../utils";
+import { useLayoutEffect } from "react";
+import { isWideWidthScreen, scrollToTop } from "../../utils";
 import { CustomButton } from "../CustomButton";
+import { ConnectWithMe } from "../contact-me/ConnectWithMe";
 
 export const Homepage = (props) => {
 	const { screenSize } = props;
 
-	const contactItemsList = [
-		{
-			text: "mayankpruthi",
-			imageUrl: "https://img.icons8.com/fluency/48/linkedin.png",
-			redirectionUrl: "https://www.linkedin.com/in/mayankpruthi/",
-		},
-		{
-			text: "mayankpruthii",
-			imageUrl: "https://img.icons8.com/ios-filled/50/github.png",
-			redirectionUrl: "https://github.com/mayankpruthii",
-		},
-		{
-			text: "mayankpruthi123@gmail.com",
-			imageUrl: "https://img.icons8.com/plasticine/100/new-post--v2.png",
-			redirectionUrl: "mailto:mayankpruthi123@gmail.com",
-		},
-	];
+    useLayoutEffect(() => {
+        scrollToTop();
+    })
 
 	return (
 		<div>
@@ -45,9 +33,10 @@ export const Homepage = (props) => {
 				<div className="text-center text-slate-900 text-2xl">
 					<b>Work hard to implement smart</b>
 				</div>
+                <div className="mx-2 mt-2">I believe in automating everything that can be, and manual processes should be avoided as much as possible.</div>
 			</div>
 			<div className="my-12">
-				<div>
+				<div className="mx-2">
 					<h2 className="mb-6 text-center text-2xl">A little about me...</h2>
 					<div
 						className={`${
@@ -69,7 +58,7 @@ export const Homepage = (props) => {
 							My expertise spans from experience in Javascript frameworks like
 							React, NodeJS to enterprise applications built with Java,
 							Typescript and Python. Additionally, I have experience is
-							ditributed computing and cloud technologies like AWS, Azure.{" "}
+							ditributed computing and cloud technologies like AWS.{" "}
 						</b>
 						And I am constantly exploring new avenues to stay at the forefront
 						of technological advancements. I am a problem solver who enjoys the
@@ -83,24 +72,7 @@ export const Homepage = (props) => {
 						/>
 					</div>
 				</div>
-				<div className="mt-10 mb-6 text-xl text-center">Connect with me</div>
-				<div className="flex justify-evenly flex-wrap mx-auto max-w-4xl">
-					{contactItemsList.map((contactItem) => {
-						return (
-							<div
-								onClick={() =>
-									window.open(contactItem.redirectionUrl, "_blank")
-								}
-								className="mt-2 flex align-middle cursor-pointer"
-							>
-								<img width="50" height="50" src={contactItem.imageUrl} />
-								<span className="ml-1 my-auto text-slate-900">
-									{contactItem.text}
-								</span>
-							</div>
-						);
-					})}
-				</div>
+				<ConnectWithMe />
 			</div>
 		</div>
 	);

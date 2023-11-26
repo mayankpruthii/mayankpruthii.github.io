@@ -12,3 +12,7 @@ export function getCurrentDimension() {
 export function isWideWidthScreen(screenDimensions) {
 	return screenDimensions.width > MIN_WIDTH_FOR_WIDE_SCREEN;
 }
+
+export function scrollToTop() {
+	window.scrollTo(0, 0);
+}
