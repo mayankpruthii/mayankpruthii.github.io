@@ -6,9 +6,9 @@ import { ConnectWithMe } from "../contact-me/ConnectWithMe";
 export const Homepage = (props) => {
 	const { screenSize } = props;
 
-    useLayoutEffect(() => {
-        scrollToTop();
-    })
+	useLayoutEffect(() => {
+		scrollToTop();
+	})
 
 	return (
 		<div>
@@ -33,15 +33,14 @@ export const Homepage = (props) => {
 				<div className="text-center text-slate-900 text-2xl">
 					<b>Work hard to implement smart</b>
 				</div>
-                <div className="mx-2 mt-2">I believe in automating everything that can be, and manual processes should be avoided as much as possible.</div>
+				<div className="mx-auto mt-2 max-w-4xl">I'm a fervent believer in automating all things possible, casting manual processes into the shadows.</div>
 			</div>
 			<div className="my-12">
 				<div className="mx-2">
 					<h2 className="mb-6 text-center text-2xl">A little about me...</h2>
 					<div
-						className={`${
-							isWideWidthScreen(screenSize) ? "mx-auto max-w-4xl" : ""
-						} text-center`}
+						className={`${isWideWidthScreen(screenSize) ? "mx-auto max-w-4xl" : ""
+							} text-center`}
 					>
 						<b>
 							I am software development engineer currently working at Amazon.
@@ -57,7 +56,7 @@ export const Homepage = (props) => {
 						<b>
 							My expertise spans from experience in Javascript frameworks like
 							React, NodeJS to enterprise applications built with Java,
-							Typescript and Python. Additionally, I have experience is
+							Typescript and Python. Additionally, I have experience in
 							ditributed computing and cloud technologies like AWS.{" "}
 						</b>
 						And I am constantly exploring new avenues to stay at the forefront

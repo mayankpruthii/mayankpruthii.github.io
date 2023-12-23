@@ -15,3 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+pre {
+  background-color: rgb(226 232 240 / 1);
+  margin-top: 0.2rem;
+  padding: 0.2rem;
+  overflow-x: auto;
+}

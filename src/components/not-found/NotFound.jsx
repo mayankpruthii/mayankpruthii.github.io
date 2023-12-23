@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { CustomButton } from "../CustomButton";
 
 export const NotFound = () => {
